@@ -1,0 +1,39 @@
+IF
+	GlobalGT("AloraEdwinRF","GLOBAL",1)
+	Allegiance("CMAlora",ENEMY)
+	!StateCheck("CMAlora",STATE_CHARMED)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		LeaveParty()
+		Enemy()
+END
+
+IF
+	GlobalGT("AloraEdwinRF","GLOBAL",1)
+	Allegiance("CMAlora",ENEMY)
+	!StateCheck("CMAlora",STATE_CHARMED)
+	Allegiance(Myself,NEUTRAL)
+	!InParty(Myself)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	InParty(Myself)
+	HPLT("CMAlora",15)
+	InParty("CMAlora")
+	Exists(LastAttackerOf("CMAlora"))
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf("CMAlora"))
+END
+
+IF
+	InParty(Myself)
+	Dead("CMAlora") 
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf("CMAlora"))
+END

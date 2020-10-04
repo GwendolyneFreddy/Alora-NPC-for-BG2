@@ -1,0 +1,59 @@
+IF
+	Global("AloraSummoned","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+IF
+	GlobalGT("AloraEdwinFR","GLOBAL",1)
+	!Dead("Edwin")
+	HPPercentLT("Edwin",30)
+	!HP("Edwin",1)
+	InParty(Myself)
+	InParty("Edwin")
+	Exists(LastAttackerOf("Edwin"))
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf("Edwin"))
+END
+
+IF
+	GlobalGT("AloraEdwinFR","GLOBAL",1)
+	Allegiance("Edwin",ENEMY)
+	!StateCheck("Edwin",STATE_CHARMED)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		LeaveParty()
+		Enemy()
+END
+
+IF
+	GlobalGT("AloraEdwinFR","GLOBAL",1)
+	Allegiance("Edwin",ENEMY)
+	!StateCheck("Edwin",STATE_CHARMED)
+	Allegiance(Myself,NEUTRAL)
+	!InParty(Myself)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	InParty(Myself)
+	HPLT("Edwin",15)
+	InParty("Edwin")
+	Exists(LastAttackerOf("Edwin"))
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf("Edwin"))
+END
+
+IF
+	InParty(Myself)
+	Dead("Edwin") 
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf("Edwin"))
+END
