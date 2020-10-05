@@ -1,0 +1,187 @@
+BACKUP ~alora/backup~
+//AUTHOR ~Raven"~
+SUPPORT ~CoM at http://www.baldursgatemods.com/forums/index.php?board=13.0~
+VERSION ~2.0~
+
+README ~alora/readme/alora-readme-%LANGUAGE%.html~ ~alora/readme/alora-readme.html~
+
+ALWAYS
+
+	ACTION_IF NOT VARIABLE_IS_SET is_eet BEGIN // Always block must run only once per install!
+
+	/* -------------------------------------------------------------------------------- *
+	 *    Determines which game is installed and if the game is an Enhanced Edition.    *
+	 * -------------------------------------------------------------------------------- */
+		OUTER_SET is_ee    = (GAME_IS ~bg2ee eet~) ? 1 : 0 // EE game
+		OUTER_SET is_bgt   = (GAME_IS ~bgt~) ? 1 : 0       // bgt
+		OUTER_SET is_tob   = (GAME_IS ~bgt tob~) ? 1 : 0   // based on vanilla ToB engine
+		OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0     // b2gee
+		OUTER_SET is_eet   = (GAME_IS "eet") ? 1 : 0       // eet
+
+
+	/* --------------------------------------------------------------------------- *
+	 *    Defines Crossplatform variables according to which game is installed.    *
+	 * --------------------------------------------------------------------------- */
+		ACTION_IF is_eet BEGIN
+			OUTER_SPRINT EDWIN30 "EDWIN30_"
+		END ELSE BEGIN
+			ACTION_IF is_bgt BEGIN
+				OUTER_SPRINT EDWIN30 "BEDWIN30"
+			END ELSE BEGIN
+				OUTER_SPRINT EDWIN30 ""
+			END
+		END
+
+		// Variable used by FUNCTION GW_FIND_DLG_RESPONSE_STRING to find after which transition Alora will be recalled by Fate Spirit.
+		OUTER_SET fatesp_string = 65010  // 65018 = ~Bring me Anomen, the fighter/cleric.~ - 65010 = ~Bring me Aerie, the elven cleric/mage.~
+
+			
+	/* --------------------------------------------------------------------------------------------- *
+	 *    Convert strings to UTF-8 for BGEE/BG2EE                                                    *
+	 *    No exception, everything needs to be converted                                             *
+	 *    setup.tra contains in game texts as well as installation texts and need to be converted    *
+	 * --------------------------------------------------------------------------------------------- */
+		ACTION_DEFINE_ARRAY cm#noconvert BEGIN END
+		// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+		ACTION_DEFINE_ARRAY cm#reload BEGIN setup END
+
+		LAF HANDLE_CHARSETS
+			INT_VAR
+				infer_charsets = 1
+			STR_VAR
+				tra_path = EVAL ~%MOD_FOLDER%/lang~
+				noconvert_array = cm#noconvert
+				reload_array = cm#reload
+		END
+
+	END
+
+END
+
+
+AUTO_TRA ~alora/lang/%s~
+
+LANGUAGE ~English~
+         ~english~
+         ~alora/lang/english/setup.tra~
+
+LANGUAGE ~Deutsch (Uebersetzung von Gerri)~
+         ~german~
+         ~alora/lang/german/setup.tra~
+
+LANGUAGE ~Russian~
+         ~russian~
+         ~alora/lang/russian/setup.tra~
+
+LANGUAGE ~Francais (traduction : Tonton-thon)~
+         ~french~
+         ~alora/lang/french/setup.tra~
+
+
+/* ==================== *
+ *  Alora NPC for BGII  *
+ * ==================== */
+BEGIN @0
+DESIGNATED 0 LABEL ~alora_npc_for_bg2~
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1  // ~You must have ToB, BGT, BG2:EE or EET installed to install the Alora NPC mod.~
+
+
+/* ---------------------- *
+ *  Installing soundsets  *
+ * ---------------------- */
+ACTION_IF NOT is_eet AND NOT is_bgt BEGIN
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+			audio_path  = EVAL ~alora/audio/%LANGUAGE%~
+			oggdec_path = ~alora/audio~
+			sox_path    = ~alora/audio~
+	END
+
+END ELSE BEGIN
+
+	// Installing Edwin sound clip
+	COPY_EXISTING ~%EDWIN30%.wav~ ~override/gedwin0.wav~
+
+END
+
+
+/* ---------------------------------------- *
+ *  Gwendolyne note: DEPRECATED as of v2.0  *
+ *  Installing portraits                    *
+ * ---------------------------------------- *
+COPY ~alora/portraits_%ee_file%~ ~override~*/
+
+
+/* ---------------------------------- *
+ *  Installing dialogues and scripts  *
+ * ---------------------------------- */
+
+// Compiling dialogues...
+COMPILE ~alora/d/alora25.d~
+COMPILE ~alora/d/bcmalor.d~
+COMPILE ~alora/d/cmalora.d~
+COMPILE ~alora/d/aloraint.d~
+
+// Compiling scripts...
+COMPILE ~alora/baf/cmalora.baf~
+COMPILE ~alora/baf/cmalo25.baf~
+
+EXTEND_TOP    ~ar0702.bcs~ ~alora/baf/ucmg702.baf~
+EXTEND_TOP    ~ar6200.bcs~ ~alora/baf/alor6200.baf~
+EXTEND_BOTTOM ~edwin.bcs~  ~alora/baf/eddy.baf~
+EXTEND_BOTTOM ~edwi25.bcs~ ~alora/baf/eddy.baf~
+
+
+/* ---------- *
+ *  Epilogue  *
+ * ---------- */
+COPY ~alora/2da/cmalond1.2da~ ~override~ 
+	REPLACE ~99999~ @3
+BUT_ONLY
+
+
+/* ------------- *
+ *  Fate Spirit  *
+ * ------------- */
+ACTION_IF is_eet BEGIN
+	INCLUDE ~EET/other/EET_functions.tph~   // functions from EET mod
+	LAF ~EET_NPC_TRANSITION~
+		INT_VAR
+			type = 2                        // NPC is summon-able if met before
+			clean_ToB = 1
+		STR_VAR
+			dv = "CMAlora"                  // death variable of your NPC
+			override_SoA = "CMALORA"        // override script of your NPC (SoA)
+			override_ToB = "CMALO25"		// override script of your NPC (ToB)
+			dialog_ToB = "CMALO25A"         // joining dialogue for ToB
+			traFile = EVAL "alora/lang/%LANGUAGE%/alora25.tra"
+			string = "@0"                   // ~Bring me Alora, the happy-go-lucky thief.~
+			stringPosDV = "Anomen"
+			SummonedVar = "AloraSummoned"
+			clean_ToB_DV = "Alora"
+	END
+END ELSE BEGIN
+	INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/d/fatesp.d~ USING ~alora/lang/%LANGUAGE%/alora25.tra~
+END
+
+
+/* ---------------------- *
+ *  Installing creatures  *
+ * ---------------------- */
+COPY ~alora/cre/alora09.cre~ ~override~
+     ~alora/cre/alora25.cre~ ~override~
+	SAY BIO @2
+	PATCH_IF is_ee BEGIN
+		WRITE_ASCII 0x34 ~aloram~ #8   // small portrait
+		WRITE_ASCII 0x3c ~aloral~ #8   // medium portrait
+	END
+
+
+/* ----------------- *
+ *  Appending files  *
+ * ----------------- */
+APPEND ~pdialog.2da~ ~CMALORA      CMALORAP           CMALORAJ          CMALORAD       CMALO25P           CMALO25J              CMALO25D              CMALO25~ UNLESS ~CMALORA~
+
+APPEND ~interdia.2da~ ~CMALORA     BCMALOR   BCMALO25~ UNLESS ~CMALORA~
