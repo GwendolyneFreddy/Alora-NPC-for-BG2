@@ -4,4 +4,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("CMAloraExists","AR0702",1)
 		CreateCreature("ALORA09",[360.350],5)
+        Continue()
 END
