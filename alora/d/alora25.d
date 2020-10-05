@@ -1,64 +1,54 @@
-EXTEND_TOP FATESP 6 #4
-  IF ~!Dead("CMAlora")
-!InMyArea("CMAlora")
-Global("AloraSummoned","GLOBAL",0)~ THEN
-   REPLY @0
-    DO ~CreateVisualEffect("SPPORTAL",[1626.1498])
-Wait(2)
-CreateCreature("ALORA25",[1626.1498],0)
-SetGlobal("AloraSummoned","GLOBAL",1)~ GOTO 8
-END
-
 BEGIN ~CMALO25A~
 
-IF ~Global("AloraSummoned","GLOBAL",1)~ THEN BEGIN 0 
-  SAY @1 
+IF ~Global("AloraSummoned","GLOBAL",1)~ THEN BEGIN 0
+  SAY @1
   IF ~~ THEN REPLY @2 DO ~SetGlobal("AloraSummoned","GLOBAL",2)~ GOTO 1
 END
 
-IF ~~ THEN BEGIN 1 
-  SAY @3 
+IF ~~ THEN BEGIN 1
+  SAY @3
   IF ~~ THEN REPLY @4 GOTO 3
   IF ~~ THEN REPLY @5 GOTO 4
 END
 
-IF ~~ THEN BEGIN 3 
-  SAY @6 
+IF ~~ THEN BEGIN 3
+  SAY @6
   IF ~~ THEN REPLY @7 DO ~JoinParty()~ EXIT
   IF ~~ THEN REPLY @8 GOTO 5
 END
 
-IF ~~ THEN BEGIN 4 
-  SAY @9 
+IF ~~ THEN BEGIN 4
+  SAY @9
   IF ~~ THEN REPLY @10 DO ~JoinParty()~ EXIT
   IF ~~ THEN REPLY @11 GOTO 5
 END
 
-IF ~~ THEN BEGIN 5 
-  SAY @12 
+IF ~~ THEN BEGIN 5
+  SAY @12
   IF ~~ THEN DO ~MoveToPointNoInterrupt([1626.1498])
 Face(0)~ EXIT
 END
 
 IF ~Global("AloraSummoned","GLOBAL",2)~ THEN BEGIN 6
-  SAY @13 
+  SAY @13
   IF ~~ THEN REPLY @14 DO ~JoinParty()~ EXIT
   IF ~~ THEN REPLY @15 GOTO 7
 END
 
-IF ~~ THEN BEGIN 7 
-  SAY @16 
+IF ~~ THEN BEGIN 7
+  SAY @16
   IF ~~ THEN EXIT
 END
 
+
 BEGIN ~CMALO25D~
+
 
 BEGIN ~CMALO25P~
 
-IF ~Global("KickedOut","LOCALS",0)~ THEN BEGIN 0 
-  SAY  @17 
-  IF ~~ THEN REPLY @18 DO ~SetGlobal("KickedOut","LOCALS",0)
-JoinParty()~ EXIT
+IF ~Global("KickedOut","LOCALS",0)~ THEN BEGIN 0
+  SAY  @17
+  IF ~~ THEN REPLY @18 DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
   IF ~AreaCheck("AR4500")~ THEN REPLY @19 DO ~SetGlobal("KickedOut","LOCALS",1)
 MoveToPointNoInterrupt([1626.1498])
 Face(0)~ GOTO 1
@@ -67,29 +57,28 @@ Face(0)~ GOTO 1
 !AreaCheck("AR6200")~ THEN REPLY @20 DO ~SetGlobal("KickedOut","LOCALS",1)
 CreateVisualEffectObject("SPDIMNDR",Myself)
 Wait(2)
-MoveBetweenAreas("AR4500",[1626.1498],0)
-~ EXIT
+MoveBetweenAreas("AR4500",[1626.1498],0)~ EXIT
   IF ~!AreaCheck("AR4500")
 !AreaCheck("AR4000")
 !AreaCheck("AR6200")~ THEN REPLY @19 DO ~SetGlobal("KickedOut","LOCALS",1)~ GOTO 1
 END
 
-IF ~~ THEN BEGIN 1 
-  SAY @21 
+IF ~~ THEN BEGIN 1
+  SAY @21
   IF ~~ THEN EXIT
 END
 
-IF ~Global("KickedOut","LOCALS",1)~ THEN BEGIN 2 
-  SAY @22 
-  IF ~~ THEN REPLY @23 DO ~SetGlobal("KickedOut","LOCALS",0)
-JoinParty()~ EXIT
+IF ~Global("KickedOut","LOCALS",1)~ THEN BEGIN 2
+  SAY @22
+  IF ~~ THEN REPLY @23 DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
   IF ~~ THEN REPLY @24 GOTO 3
 END
 
-IF ~~ THEN BEGIN 3 
-  SAY @16 
+IF ~~ THEN BEGIN 3
+  SAY @16
   IF ~~ THEN EXIT
 END
+
 
 BEGIN ~CMALO25J~
 
@@ -99,7 +88,6 @@ I_C_T BAERIE25 159 Alora_AerieBaby
 END
 
 
-
 BEGIN ~BCMALO25~
 
 IF ~AreaCheck("AR5000")
@@ -107,20 +95,20 @@ See(Player1)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("TalkedSarMel01","GLOBAL",1)
 Global("PcAloraChatTob1","LOCALS",0)~ THEN BEGIN alora_pc1
-SAY @26
-++ @27 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob1
-++ @28 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob2
-++ @29 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob3
+  SAY @26
+  ++ @27 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob1
+  ++ @28 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob2
+  ++ @29 DO ~SetGlobal("PcAloraChatTob1","LOCALS",1)~ + tob3
 END
 
 IF ~~ tob1
-SAY @30
-IF ~~ THEN EXIT
+  SAY @30
+  IF ~~ THEN EXIT
 END
 
 IF ~~ tob2
-SAY @31
-IF ~~ THEN EXIT
+  SAY @31
+  IF ~~ THEN EXIT
 END
 
 IF ~~ tob3
@@ -130,23 +118,21 @@ SAY @32
 END
 
 IF ~~ tob4
-SAY @35
-++ @36 + tob5
-++ @37 + tob6
+  SAY @35
+  ++ @36 + tob5
+  ++ @37 + tob6
 END
 
-IF ~~ tob5 
-SAY @38
-IF ~~ THEN EXIT
+IF ~~ tob5
+  SAY @38
+  IF ~~ THEN EXIT
 END
 
 
 IF ~~ tob6
-SAY @39
-IF ~~ THEN EXIT
+  SAY @39
+  IF ~~ THEN EXIT
 END
-
-
 
 
 CHAIN IF ~InParty("Sarevok")
@@ -164,7 +150,7 @@ IF ~InParty("Haerdalis")
 See("Haerdalis")
 !StateCheck("Haerdalis",STATE_SLEEPING)
 Global("AloraHaerTob1","GLOBAL",0)~ THEN BCMALO25 Alora_Haer25_1
-@44 
+@44
 DO ~SetGlobal("AloraHaerTob1","GLOBAL",1)~
 == BHAERD25 @45
 = @46
@@ -182,7 +168,7 @@ See("CMAlora")
 !StateCheck("CMAlora",STATE_SLEEPING)
 Global("AloraHaerTob1","GLOBAL",1)
 Global("AloraHaerTob2","GLOBAL",0)~ THEN BHAERD25 Alora_Haer25_2
-@53 
+@53
 DO ~SetGlobal("AloraHaerTob2","GLOBAL",1)~
 == BCMALO25 @54
 == BHAERD25 @55
@@ -200,7 +186,7 @@ See("Aerie")
 Global("AloraAerieTob1","GLOBAL",0)
 Global("babytalk","GLOBAL",0)
 Global("AerieRomanceActive","GLOBAL",2)~ THEN BCMALO25 Alora_Aerie25_1
-@61 
+@61
 DO ~SetGlobal("AloraAerieTob1","GLOBAL",1)~
 == BAERIE25 @62
 == BCMALO25 @63
@@ -232,7 +218,7 @@ See("Anomen")
 !StateCheck("Anomen",STATE_SLEEPING)
 Global("AloraAnomenTob1","GLOBAL",0)
 Global("AnomenRomanceActive","GLOBAL",2)~ THEN BCMALO25 Alora_anomen25_1
-@73 
+@73
 DO ~SetGlobal("AloraAnomenTob1","GLOBAL",1)~
 == BANOME25 @62
 == BCMALO25 @74
@@ -290,8 +276,3 @@ Global("AloraEdwinFinal","GLOBAL",0)~ THEN BEDWIN25 FinalConfession
 == BEDWIN25 @97
 == BCMALO25 @98
 EXIT
-
-
-
-
-

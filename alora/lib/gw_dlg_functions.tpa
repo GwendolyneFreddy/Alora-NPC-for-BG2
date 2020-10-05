@@ -1,0 +1,74 @@
+/* ========================================================================= *
+ *                                                                           *
+ *        F O N C T I O N S   &   M A C R O S   :   D I A L O G U E S        *
+ *                                                                           *
+ * ========================================================================= */
+
+/* ========================================================================================================================================== *
+ * FUNCTION GW_FIND_DLG_RESPONSE_STRING : RECHERCHE de numéros d'état et de transition correspondant à un string dans un fichier de dialogue. *
+ *                                        LOOK for state and transition numbers in a dialogue file.                                           *
+ * ========================================================================================================================================== */
+
+DEFINE_PATCH_FUNCTION ~GW_FIND_DLG_RESPONSE_STRING~
+	INT_VAR	GW_string_dlg = 0		// string que l'on cherche
+	RET		GW_transition_found		// Variable indiquant que l'on a trouvé une correspondance ==> Y = strref found
+			GW_state_number			// Numéro du dialogue
+			GW_transition_number	// Numéro de la transition (réponse)
+BEGIN
+
+	SET GW_transition_number = "-99"
+	SET GW_state_number = "-99"
+	SPRINT GW_transition_found "N"
+	READ_LONG 0x08 GW_numstates				// Number of states
+	READ_LONG 0x0c GW_offstates				// Offset of state table from start of file
+	READ_LONG 0x10 GW_numresponse			// Number of transitions
+	READ_LONG 0x14 GW_offresponse			// Offset of transition table from start of file
+/*	READ_LONG 0x18 GW_offstatetrigger		// Offset of state trigger table from start of file
+	READ_LONG 0x1c GW_numstatetrigger		// Number of state triggers
+	READ_LONG 0x20 GW_offresponsetrigger	// Offset of transition trigger table from start of file
+	READ_LONG 0x24 GW_numresponsetrigger	// Number of transition triggers
+	READ_LONG 0x28 GW_offaction				// Offset of action table from start of file
+	READ_LONG 0x2c GW_numaction				// Number of actions
+	PATCH_IF (GW_debug_variable > 2) BEGIN
+		PATCH_PRINT ~%SOURCE_RES%	-	CONTROLE FONCTION GW_FIND_DLG_RESPONSE_STRING	-	States = %GW_numstates%	at offset %GW_offstates%	-	Reponses = %GW_numresponse% at offset %GW_offresponse%.~
+	END
+*/	FOR (state = 0 ; state < GW_numstates ; ++state) BEGIN
+		PATCH_IF ("%GW_transition_found%" STRING_COMPARE_CASE "Y") BEGIN
+			READ_LONG ("%GW_offstates%" +       (state * 0x10)) GW_state_string			// Actor response text (i.e. what the non-player character says to the party)
+			READ_LONG ("%GW_offstates%" + 0x4 + (state * 0x10)) GW_index_first_response	// Index of the first transition corresponding to this state (i.e. the index in the transition table of the first potential response the party can make in this state).
+			READ_LONG ("%GW_offstates%" + 0x8 + (state * 0x10)) GW_state_num_response	// Number of transitions corresponding to this state (i.e. how many possible responses are there to this state). A consecutive range of transitions in the transition table are assigned to this state, starting from 'first', as given by the previous field, ranging up to (but not including) 'first'+'count'.
+			FOR (response = 0 ; response < GW_state_num_response ; ++response) BEGIN
+				READ_LONG ("%GW_offresponse%" + 0x4 + ("%GW_index_first_response%" * 0x20) + (response * 0x20)) GW_response_string
+				PATCH_IF (GW_response_string = GW_string_dlg) BEGIN
+					SET GW_transition_number = response
+					SET GW_state_number = state
+					SPRINT GW_transition_found "Y"
+//						PATCH_PRINT ~	%SOURCE_RES%	-	CONTROL FONCTION GW_FIND_DLG_RESPONSE_STRING	-	State #%state% = %GW_state_string%	-	Reponse #%response% = %GW_response_string%.~
+				END
+			END	// of Looping through responses
+		END		// PATCH_IF ("%GW_transition_found%" STRING_COMPARE_CASE "Y")
+	END			// of Looping through states
+
+END				// of DEFINE_PATCH_FUNCTION
+
+
+
+/* ========================================================================================== *
+ *  LOOKING for STATE and TRANSITION numbers in fatesp.dlg.                                   *
+ * ------------------------------------------------------------------------------------------ *
+ *  We will insert Alora after Aerie using fatesp_string variable defined in ALWAYS block) :  *
+ *  #65010 = ~Bring me Aerie, the elven cleric/mage.~                                         *
+ * ========================================================================================== */
+
+COPY_EXISTING - ~fatesp.dlg~ ~override~
+
+	PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN	// protects against invalid files
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = EVAL "%fatesp_string%" RET GW_transition_found GW_state_number GW_transition_number END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET fatesp_transition_alora = GW_transition_number + 1
+			SET fatesp_state_alora = GW_state_number
+			PATCH_PRINT "CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%fatesp_state_alora%	-	transition = #%fatesp_transition_alora%."
+		END
+
+	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+BUT_ONLY
