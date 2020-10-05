@@ -1,183 +1,180 @@
 BEGIN ~BCMALOR~
 
-APPEND BCMALOR
-
 IF ~See(Player1)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("PcAloraChat1","LOCALS",0)~ THEN BEGIN apc_chat1
-SAY @0 
-++ @1 DO ~SetGlobal("PcAloraChat1","LOCALS",1)~ + chatmore
-++ @2 DO ~SetGlobal("PcAloraChat1","LOCALS",1)~ + notalk
+  SAY @0
+  ++ @1 DO ~SetGlobal("PcAloraChat1","LOCALS",1)~ + chatmore
+  ++ @2 DO ~SetGlobal("PcAloraChat1","LOCALS",1)~ + notalk
 END
 
 IF ~~ chatmore
-SAY @3
-++ @4 + rustlock
-++ @5 + notalk
+  SAY @3
+  ++ @4 + rustlock
+  ++ @5 + notalk
 END
 
 IF ~~ notalk
-SAY @6
-IF ~~ EXIT
+  SAY @6
+  IF ~~ EXIT
 END
 
 IF ~~ rustlock
-SAY @7
-++ @8 + meany
-++ @9 + okdokey
+  SAY @7
+  ++ @8 + meany
+  ++ @9 + okdokey
 END
 
 IF ~~ meany
-SAY @10
-IF ~~ EXIT
+  SAY @10
+  IF ~~ EXIT
 END
 
 IF ~~ okdokey
-SAY @11
-IF ~~ EXIT
+  SAY @11
+  IF ~~ EXIT
 END
 
 IF ~See(Player1)
 Class(Player1,MAGE)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("PcAloraChat2","LOCALS",0)~ THEN BEGIN apc_chat2
-SAY @12  
-++ @13 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + yes_really
-++ @14 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + mage_talk
-++ @15 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + bye_bye
+  SAY @12
+  ++ @13 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + yes_really
+  ++ @14 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + mage_talk
+  ++ @15 DO ~SetGlobal("PcAloraChat2","LOCALS",1)~ + bye_bye
 END
 
 IF ~~ yes_really
-SAY @16
-IF ~~ GOTO mage_talk
+  SAY @16
+  IF ~~ GOTO mage_talk
 END
 
-IF ~~ mage_talk 
-SAY @17
-++ @18 + yes_silly
-++ @19 + yes_stuffy
+IF ~~ mage_talk
+  SAY @17
+  ++ @18 + yes_silly
+  ++ @19 + yes_stuffy
 END
 
 IF ~~ yes_silly
-SAY @20
-++ @21 + bye_bye
-++ @22 + bye_bye
-++ @23 + it_is
+  SAY @20
+  ++ @21 + bye_bye
+  ++ @22 + bye_bye
+  ++ @23 + it_is
 END
 
 IF ~~ yes_stuffy
-SAY @24
+  SAY @24
 END
 
 IF ~~ bye_bye
-SAY @25
-IF ~~ EXIT
+  SAY @25
+  IF ~~ EXIT
 END
 
 IF ~~ it_is
-SAY @26
-IF ~~ EXIT
+  SAY @26
+  IF ~~ EXIT
 END
 
 IF ~PartyRested()
 See(Player1)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("PcAloraChat3","LOCALS",0)~ THEN BEGIN apc_chat3
-SAY @27  
-++ @28 DO ~SetGlobal("PcAloraChat3","LOCALS",1)~ + happy_happy
-++ @29 DO ~SetGlobal("PcAloraChat3","LOCALS",1)~ + grumpy_one
+  SAY @27
+  ++ @28 DO ~SetGlobal("PcAloraChat3","LOCALS",1)~ + happy_happy
+  ++ @29 DO ~SetGlobal("PcAloraChat3","LOCALS",1)~ + grumpy_one
 END
 
 IF ~~ happy_happy
-SAY @30
-++ @31 + why_yes
-++ @32 + grumpy_one
+  SAY @30
+  ++ @31 + why_yes
+  ++ @32 + grumpy_one
 END
 
 IF ~~ why_yes
-SAY @33
-IF ~~ EXIT
+  SAY @33
+  IF ~~ EXIT
 END
 
 IF ~~ grumpy_one
-SAY @34 
-IF ~~ EXIT
+  SAY @34
+  IF ~~ EXIT
 END
 
 /* IF ~~ grumpy_one
-SAY ~Grumpy one aye? Wake up on the wrong side of the bed <CHARNAME>? Wake up on the right side next time and be happy!~
-IF ~~ EXIT
+  SAY ~Grumpy one aye? Wake up on the wrong side of the bed <CHARNAME>? Wake up on the right side next time and be happy!~
+  IF ~~ EXIT
 END */
 
 IF ~AreaType(OUTDOOR)
 See(Player1)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("PcAloraChat4","LOCALS",0)~ THEN BEGIN apc_chat4
-SAY @35
-++ @36 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + bye_bye
-++ @37 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + u_funny
-++ @38 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + u_funny
+  SAY @35
+  ++ @36 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + bye_bye
+  ++ @37 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + u_funny
+  ++ @38 DO ~SetGlobal("PcAloraChat4","LOCALS",1)~ + u_funny
 END
 
 IF ~~ u_funny
-SAY @39
-++ @40 + u_funny2
-++ @41 + u_funny2
-++ @42 + u_funny3
+  SAY @39
+  ++ @40 + u_funny2
+  ++ @41 + u_funny2
+  ++ @42 + u_funny3
 END
 
 IF ~~ u_funny2
-SAY @43
-IF ~~ EXIT
+  SAY @43
+  IF ~~ EXIT
 END
 
 IF ~~ u_funny3
-SAY @44
-IF ~~ EXIT
+  SAY @44
+  IF ~~ EXIT
 END
 
 IF ~See(Player1)
 !StateCheck(Player1,STATE_SLEEPING)
 Global("PcAloraChat4","LOCALS",1)
 Global("PcAloraChat5","LOCALS",0)~ THEN BEGIN apc_chat4
-SAY @45 
-++ @46 DO ~SetGlobal("PcAloraChat5","LOCALS",1)~ + alora_expl
-++ @47 DO ~SetGlobal("PcAloraChat5","LOCALS",1)~ + u_sure
+  SAY @45
+  ++ @46 DO ~SetGlobal("PcAloraChat5","LOCALS",1)~ + alora_expl
+  ++ @47 DO ~SetGlobal("PcAloraChat5","LOCALS",1)~ + u_sure
 END
 
 IF ~~ u_sure
-SAY @48
-++ @49 + alora_expl
-++ @50 + alora_mad
+  SAY @48
+  ++ @49 + alora_expl
+  ++ @50 + alora_mad
 END
 
 IF ~~ alora_mad
-SAY @51
-IF ~~ THEN DO ~SetGlobal("AloraMad","LOCALS",1) EscapeArea()
-~ EXIT
+  SAY @51
+  IF ~~ THEN DO ~SetGlobal("AloraMad","LOCALS",1) EscapeArea()~ EXIT
 END
 
 IF ~~ alora_expl
-SAY @52
-++ @53 + alora_expl2
+  SAY @52
+  ++ @53 + alora_expl2
 END
 
 IF ~~ alora_expl2
-SAY @54
-++ @55 + alora_expl3
+  SAY @54
+  ++ @55 + alora_expl3
 END
 
 IF ~~ alora_expl3
-SAY @56
-++ @57 + alora_expl4
-++ @58 + alora_mad
+  SAY @56
+  ++ @57 + alora_expl4
+  ++ @58 + alora_mad
 END
 
 IF ~~ alora_expl4
-SAY @59
-IF ~~ EXIT
+  SAY @59
+  IF ~~ EXIT
 END
-END 
+
 
 /*
 Continues in ToB
@@ -191,7 +188,7 @@ CHAIN IF ~InParty("Yoshimo")
 See("Yoshimo")
 !StateCheck("Yoshimo",STATE_SLEEPING)
 Global("AloraYoshi","LOCALS",0)~ THEN BCMALOR alora_yoshi
-@60 
+@60
 DO ~SetGlobal("AloraYoshi","LOCALS",1)~
 == BYOSHIM @61
 == BCMALOR @62
@@ -221,11 +218,11 @@ CHAIN IF ~InParty("Jaheira")
 See("Jaheira")
 !StateCheck("Jaheira",STATE_SLEEPING)
 Global("CMAloraJaheira2","LOCALS",0)~ THEN BCMALOR JahsChat
-@76 
+@76
 DO ~SetGlobal("CMAloraJaheira2","LOCALS",1)~
-== BJAHEIR @77 
+== BJAHEIR @77
 == BCMALOR @78
-== BJAHEIR @79 
+== BJAHEIR @79
 == BCMALOR @80
 == BJAHEIR @81
 == BCMALOR @82
@@ -267,7 +264,7 @@ See("Keldorn")
 !StateCheck("Keldorn",STATE_SLEEPING)
 !Class(Player1,PALADIN)
 Global("CMAloraKel1","LOCALS",0)~ THEN BCMALOR alora_kel
-@100 
+@100
 DO ~SetGlobal("CMAloraKel1","LOCALS",1)~
 == BKELDOR @101
 == BCMALOR @102
@@ -280,7 +277,7 @@ CHAIN IF ~InParty("Keldorn")
 See("Keldorn")
 !StateCheck("Keldorn",STATE_SLEEPING)
 Global("CMAloraKel2","LOCALS",0)~ THEN BCMALOR alora_kel2
-@106 
+@106
 DO ~SetGlobal("CMAloraKel2","LOCALS",1)~
 == BKELDOR @107
 == BCMALOR @108
@@ -292,7 +289,7 @@ CHAIN IF ~InParty("Korgan")
 See("Korgan")
 !StateCheck("Korgan",STATE_SLEEPING)
 Global("AloraKorgan1","LOCALS",0)~ THEN BCMALOR alora_korgan1
-@111 
+@111
 DO ~SetGlobal("AloraKorgan1","LOCALS",1)~
 == BKORGAN @112
 == BCMALOR @113
@@ -308,7 +305,7 @@ See("Korgan")
 !StateCheck("Korgan",STATE_SLEEPING)
 AreaType(DUNGEON)
 Global("AloraKorgan2","LOCALS",0)~ THEN BCMALOR alora_korgan2
-@119 
+@119
 DO ~SetGlobal("AloraKorgan2","LOCALS",1)~
 == BKORGAN @120
 == BCMALOR @121
@@ -341,7 +338,7 @@ Global("AnomenIsNotKnight","GLOBAL",0)
 See("Anomen")
 !StateCheck("Anomen",STATE_SLEEPING)
 Global("AloraAno2","LOCALS",0)~ THEN BCMALOR alora_ano2
-@133 
+@133
 DO ~SetGlobal("AloraAno2","LOCALS",1)~
 == BANOMEN @134
 == BCMALOR @135
@@ -356,7 +353,7 @@ InParty("Keldorn")
 !StateCheck("Anomen",STATE_SLEEPING)
 !StateCheck("Keldorn",STATE_SLEEPING)
 Global("CMAloraAnonKel","LOCALS",0)~ THEN BCMALOR alora_stuffy
-@138 
+@138
 DO ~SetGlobal("CMAloraAnonKel","LOCALS",1)~
 == BANOMEN @139
 == BKELDOR @140
@@ -405,8 +402,8 @@ GENDER("Edwin",MALE)
 !StateCheck("Edwin",STATE_SLEEPING)
 Global("CMAloraEdwin1","LOCALS",0)~ THEN BCMALOR EddyAlora1
 @165  DO ~SetGlobal("CMAloraEdwin1","LOCALS",1)~
-== BEDWIN @166 
-== BCMALOR @167  
+== BEDWIN @166
+== BCMALOR @167
 == BEDWIN @168
 == BCMALOR @169
 == BEDWIN @170
@@ -421,7 +418,7 @@ GENDER("Edwin",MALE)
 !StateCheck("Edwin",STATE_SLEEPING)
 Global("CMAloraEdwin1","LOCALS",1)
 Global("CMAloraEdwin2","LOCALS",0)~ THEN BCMALOR EddyAlora2
-@173 
+@173
 DO ~SetGlobal("CMAloraEdwin2","LOCALS",1)~
 == BEDWIN @174
 == BCMALOR @175
@@ -442,7 +439,7 @@ See("Edwin")
 GENDER("Edwin",FEMALE)
 !StateCheck("Edwin",STATE_SLEEPING)
 Global("CMAloraEdwinStickUp","LOCALS",0)~ THEN BCMALOR EddyAloraTrans
-@181 
+@181
 DO ~SetGlobal("CMAloraEdwinStickUp","LOCALS",1)~
 == BEDWIN @182
 == BAERIE IF ~InParty("Aerie")~ THEN @183
@@ -477,7 +474,7 @@ HPPercentLT("Edwin",20)
 !StateCheck("Edwin",STATE_SLEEPING)
 Global("CMAloraEdwinHurt","LOCALS",0)~ THEN BCMALOR eddyhurt
 @198 DO ~SetGlobal("CMAloraEdwinHurt","LOCALS",1)
-IncrementGlobal("AloraEdwinFR","GLOBAL",1)~ 
+IncrementGlobal("AloraEdwinFR","GLOBAL",1)~
 == BEDWIN @199
 == BCMALOR @200
 == BEDWIN @201
@@ -506,7 +503,7 @@ AreaType(FOREST)
 AreaCheck("AR1900")
 !StateCheck("Cernd",STATE_SLEEPING)
 Global("CMAloraCernd2","LOCALS",0)~ THEN BCMALOR CerndAlora2
-@209 
+@209
 DO ~SetGlobal("CMAloraCernd2","LOCALS",1)~
 == BCERND @210
 == BCMALOR @211
@@ -520,7 +517,7 @@ IF ~InParty("Minsc")
 See("Minsc")
 !StateCheck("Minsc",STATE_SLEEPING)
 Global("CMAloraMinsc1","LOCALS",0)~ THEN BCMALOR MinscAlora1
-@215 
+@215
 DO ~SetGlobal("CMAloraMinsc1","LOCALS",1)~
 == BMINSC @216
 == BCMALOR @217
@@ -532,7 +529,7 @@ DO ~SetGlobal("CMAloraMinsc1","LOCALS",1)~
 == BCMALOR @223
 EXIT
 
-CHAIN IF ~PartyRested()                                 
+CHAIN IF ~PartyRested()
 InParty("CMAlora")
 See("CMAlora")
 !StateCheck("CMAlora",STATE_SLEEPING)
@@ -553,7 +550,7 @@ Global("CMAloraMinscBoo","LOCALS",0)~ THEN BMINSC missingboo
 == BCERND IF ~IsValidForPartyDialog("Cernd")~ THEN @237
 == BMINSC @238
 == BCMALOR @239
-= @240 
+= @240
 == BMINSC @241
 EXIT
 
@@ -574,12 +571,12 @@ IF ~InParty("Viconia")
 See("Viconia")
 !StateCheck("Viconia",STATE_SLEEPING)
 Global("CMAloraViconia1","LOCALS",0)~ THEN BCMALOR ViconiaAlora1
-@248 
+@248
 DO ~SetGlobal("CMAloraViconia1","LOCALS",1)~
 == BVICONI @249
 == BCMALOR @250
 == BVICONI @251
-== BCMALOR @252 
+== BCMALOR @252
 EXIT
 
 CHAIN IF ~InParty("CMAlora")
@@ -605,7 +602,7 @@ IF ~InParty("Mazzy")
 See("Mazzy")
 !StateCheck("Mazzy",STATE_SLEEPING)
 Global("CMAloraMazzy1","LOCALS",0)~ THEN BCMALOR MazzyAlora1
-@265 
+@265
 DO ~SetGlobal("CMAloraMazzy1","LOCALS",1)~
 == BMAZZY @266
 == BCMALOR @267
@@ -618,7 +615,7 @@ DO ~SetGlobal("CMAloraMazzy1","LOCALS",1)~
 == BMAZZY @274
 EXIT
 
-CHAIN IF ~PartyRested()                                 
+CHAIN IF ~PartyRested()
 InParty("CMAlora")
 See("CMAlora")
 !StateCheck("CMAlora",STATE_SLEEPING)
@@ -712,6 +709,3 @@ Global("CMAloraValy2","LOCALS",0)~ THEN BCMALOR Alora_Vaggy2
 == BVALYGA @330
 == BCMALOR @331
 EXIT
-
-
-

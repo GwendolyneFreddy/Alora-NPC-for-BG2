@@ -86,7 +86,7 @@ I_C_T ANOMENJ 150 AloraAnomen1
 END
 
 I_C_T IMOEN2 22 AloraDontLeaveImoen
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN
 @28
 END
 
@@ -128,7 +128,7 @@ I_C_T RENAL 30 AloraRenal1
 END
 
 I_C_T RENAL 23 AloraRena2
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN
 @41
 END
 
@@ -138,7 +138,7 @@ I_C_T RENAL 69 AloraRenal3
 END
 
 I_C_T ARAN 4 AloraAran1
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN
 @43
 END
 
@@ -148,7 +148,7 @@ I_C_T ARAN 18 AloraAranDefectors
 END
 
 I_C_T ARAN 40 AloraAran2
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN
 @45
 END
 
@@ -165,22 +165,22 @@ I_C_T YOSHJ 113 AloraDamnedTraitor
 END
 
 I_C_T HELLJON 7 AloraIrenicus
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49
 == HELLJON IF ~IsValidForPartyDialog("CMAlora")~ THEN @50
 END
 
 I_C_T HELLJON 8 AloraIrenicus
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49
 == HELLJON IF ~IsValidForPartyDialog("CMAlora")~ THEN @50
 END
 
 I_C_T HELLJON 9 AloraIrenicus
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49
 == HELLJON IF ~IsValidForPartyDialog("CMAlora")~ THEN @50
 END
 
 I_C_T HELLJON 10 AloraIrenicus
-== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49 
+== CMALORAJ IF ~IsValidForPartyDialog("CMAlora")~ THEN @49
 == HELLJON IF ~IsValidForPartyDialog("CMAlora")~ THEN @50
 END
 

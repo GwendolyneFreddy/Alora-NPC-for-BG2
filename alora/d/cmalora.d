@@ -5,88 +5,80 @@ BEGIN CMALORA
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN Heya 
   SAY @0 
-++ @1 + Forgot
-++ @2 + Tricks
+	++ @1 + Forgot
+	++ @2 + Tricks
 END
 
 IF ~~ Forgot
-SAY @3 IF ~~ THEN DO ~SetGlobal("CMForgot","LOCALS",1)
-EscapeAreaMove("AR0406",470,1490,0)
-~ EXIT
+  SAY @3
+	IF ~~ THEN DO ~SetGlobal("CMForgot","LOCALS",1) EscapeAreaMove("AR0406",470,1490,0)~ EXIT
 END
 
 IF ~~ Tricks
-SAY @4
-++ @5 + MakeOffer
+  SAY @4
+	++ @5 + MakeOffer
 END
 
 IF ~~ MakeOffer
-SAY @6
-++ @7 + Join
-++ @8 + Rejected
+  SAY @6
+	++ @7 + Join
+	++ @8 + Rejected
 END
 
 IF ~~ Join
-SAY @9  IF ~~ THEN DO ~JoinParty()~ EXIT
+  SAY @9
+	IF ~~ THEN DO ~JoinParty()~ EXIT
 END
 
 
 IF ~~ Rejected
-SAY @10 IF ~~ THEN DO ~SetGlobal("CMRejected","LOCALS",1)
-EscapeAreaMove("AR0406",470,1490,0)
-~ EXIT
+  SAY @10
+	IF ~~ THEN DO ~SetGlobal("CMRejected","LOCALS",1) EscapeAreaMove("AR0406",470,1490,0)~ EXIT
 END
 
 IF ~NumTimesTalkedToGT(0)~ HelloAgain
-SAY @11
-++ @12 + Join
-++ @8 + Rejected
+  SAY @11
+	++ @12 + Join
+	++ @8 + Rejected
 END
+
 
 BEGIN ~CMALORAP~
 
 IF ~~ THEN BEGIN rejoin 
   SAY @13 
-  IF ~~ THEN DO ~JoinParty()~ EXIT
+	IF ~~ THEN DO ~JoinParty()~ EXIT
 END
 
-IF WEIGHT #1 
-~Global("KickedOut","LOCALS",1)
-~ THEN BEGIN greet 
+IF WEIGHT #1 ~Global("KickedOut","LOCALS",1)~ THEN BEGIN greet 
   SAY @14
-  IF ~~ THEN GOTO IsItU
+	IF ~~ THEN GOTO IsItU
 END
 
 IF ~~ THEN BEGIN IsItU
   SAY @15 
-  IF ~~ THEN REPLY @16 GOTO reject
-  IF ~~ THEN REPLY @17 GOTO join
+	IF ~~ THEN REPLY @16 GOTO reject
+	IF ~~ THEN REPLY @17 GOTO join
 END
 
 IF ~~ THEN BEGIN reject 
   SAY @18 
-  IF ~~ THEN EXIT
+	IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN join 
   SAY @13 
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0)
-JoinParty()
-~ EXIT
+	IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
 END
 
-IF WEIGHT #2 
-~HappinessLT(Myself,-290)
-~ THEN BEGIN mad 
+IF WEIGHT #2 ~HappinessLT(Myself,-290)~ THEN BEGIN mad 
   SAY @19 
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)
-EscapeArea()
-~ EXIT
+	IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN leave 
   SAY @20
-  IF ~!AreaCheck("AR0601")
+	IF ~!AreaCheck("AR0601")
 !AreaCheck("AR0602")
 !AreaCheck("AR0603")
 !AreaCheck("AR0410")
@@ -134,9 +126,7 @@ IF ~~ THEN BEGIN leave
 !AreaCheck("AR2904")
 !AreaCheck("AR2905")
 !AreaCheck("AR2906")
-~ THEN REPLY @21 DO ~SetGlobal("KickedOut","LOCALS",1)
-EscapeAreaMove("AR0406",470,1490,0)
-~ EXIT
+~ THEN REPLY @21 DO ~SetGlobal("KickedOut","LOCALS",1) EscapeAreaMove("AR0406",470,1490,0)~ EXIT
   IF ~!AreaCheck("AR0301")
 !AreaCheck("AR0302")
 !AreaCheck("AR0303")
@@ -166,16 +156,12 @@ EscapeAreaMove("AR0406",470,1490,0)
   IF ~OR(3)
 AreaCheck("AR0601")
 AreaCheck("AR0602")
-AreaCheck("AR0603")~ THEN REPLY @23 DO ~SetGlobal("KickedOut","LOCALS",1)
-EscapeAreaMove("AR0406",470,1490,0)
-~ EXIT
+AreaCheck("AR0603")~ THEN REPLY @23 DO ~SetGlobal("KickedOut","LOCALS",1) EscapeAreaMove("AR0406",470,1490,0)~ EXIT
 END
 
-IF WEIGHT #3 
-~True()
-~ THEN BEGIN 8 
+IF WEIGHT #3 ~True()~ THEN BEGIN 8 
   SAY @24 
-  IF ~~ THEN REPLY @25 GOTO rejoin
-  IF ~~ THEN REPLY @26 GOTO leave
+	IF ~~ THEN REPLY @25 GOTO rejoin
+	IF ~~ THEN REPLY @26 GOTO leave
 END
 

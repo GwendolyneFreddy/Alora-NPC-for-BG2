@@ -1,8 +1,6 @@
 BEGIN ~CMALORAJ~
 
 
-
-
 /* CHAIN IF WEIGHT #-1
 ~InParty("CMAlora")
 See("CMAlora")
@@ -18,4 +16,3 @@ Global("AloraCousin","LOCALS",0)~ THEN CMALOCUS AloraQuest
 == CMALORAJ @7
 EXIT
 */
-
