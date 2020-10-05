@@ -29,11 +29,12 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - bcmalor.d: Integrated <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-49#entry561215">Lollorian's class script trigger fixes</a>.
 - Added Alora and Edwin sound clips for every translated language.
 - Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files.
-- TODO Proofread tra files.
+- Proofread tra files.
 - Added French translation (by Tonton-thon).
 - TODO Re-formated, updated and renamed readme file to *alora-readme-english.html* and moved it into new readme folder.
 - TODO Removed useless files and backup folder.
 - Lower cased files.
 - Updated OggDec to v1.9.7.
 - Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
+- TODO Updated WeiDU installer to v247.
 - TODO Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).

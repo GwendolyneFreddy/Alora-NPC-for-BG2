@@ -52,7 +52,7 @@ END
 
 IF
 	InParty(Myself)
-	Dead("Edwin") 
+	Dead("Edwin")
 THEN
 	RESPONSE #100
 		Attack(LastAttackerOf("Edwin"))
