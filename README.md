@@ -3,6 +3,7 @@
 <h3>A TeamBG mod for Baldur's Gate II:ToB, Baldur's Gate Trilogy, BG2:EE and EET<h3>
 
 </div><br />
+
 ## 
 
 :warning: Readme writing in progress... Don't try to download and install this mod as it is a WIP version and its install will fail, because of missing files still in development or in beta testing
@@ -25,10 +26,12 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - TODO Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - TODO Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charset<ins>s</ins>*).
 - bcmalor.d: Integrated <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-49#entry561215">Lollorian's class script trigger fixes</a>.
+- Added Alora and Edwin sound clips for every translated language.
 - Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files.
 - TODO Proofread tra files.
+- Added French translation (by Tonton-thon).
 - TODO Updated deprecated modding tools links.
-- TODO Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
+- TODO Re-formated, updated and renamed readme file to *alora-readme-english.html* and moved it into new readme folder.
 - TODO Removed useless files and backup folder.
 - Lower cased files.
 - Updated OggDec to v1.9.7.
