@@ -20,9 +20,10 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - TODO Added *alora.ini* metadata file to support AL|EN's "Project Infinity".
 - TODO Renamed *setup-alora.tp2* -> *alora.tp2* to support AL|EN's "Project Infinity".
 - TODO Replaced `AUTHOR` keyword with `SUPPORT`.
+- TODO Replaced `AT_INTERACTIVE_EXIT` deprecated command with `README`.
 - TODO Used `HANDLE_CHARSETS` function to convert string entries for EE games.
-- TODO Added component `DESIGNATED` number and "*alora_npc_bg2*"`LABEL`.
-- Gathered Alora mod for original BG2 and BG2:EE in one single package and added native EET compatibility.
+- TODO Added component `DESIGNATED` number and "*alora_npc_for_bg2*"`LABEL`.
+- Gathered Alora mod for original BG2 and BG2:EE in one single package, and added native EET compatibility.
 - Commented code as much as possible.
 - TODO Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - bcmalor.d: Integrated <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-49#entry561215">Lollorian's class script trigger fixes</a>.
@@ -30,7 +31,6 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files.
 - TODO Proofread tra files.
 - Added French translation (by Tonton-thon).
-- TODO Updated deprecated modding tools links.
 - TODO Re-formated, updated and renamed readme file to *alora-readme-english.html* and moved it into new readme folder.
 - TODO Removed useless files and backup folder.
 - Lower cased files.
