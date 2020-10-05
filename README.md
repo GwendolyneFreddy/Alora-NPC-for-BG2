@@ -20,11 +20,11 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - TODO Added *alora.ini* metadata file to support AL|EN's "Project Infinity".
 - TODO Renamed *setup-alora.tp2* -> *alora.tp2* to support AL|EN's "Project Infinity".
 - TODO Replaced `AUTHOR` keyword with `SUPPORT`.
+- TODO Used `HANDLE_CHARSETS` function to convert string entries for EE games.
 - TODO Added component `DESIGNATED` number and "*alora_npc_bg2*"`LABEL`.
 - Gathered Alora mod for original BG2 and BG2:EE in one single package and added native EET compatibility.
 - Commented code as much as possible.
 - TODO Replaced `GAME_IS` conditions with variables checks to speed up install time.
-- TODO Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charset<ins>s</ins>*).
 - bcmalor.d: Integrated <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-49#entry561215">Lollorian's class script trigger fixes</a>.
 - Added Alora and Edwin sound clips for every translated language.
 - Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files.
@@ -35,4 +35,5 @@ The halfling thief from Baldur's Gate can be found in Ribald's store.
 - TODO Removed useless files and backup folder.
 - Lower cased files.
 - Updated OggDec to v1.9.7.
+- Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
 - TODO Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
