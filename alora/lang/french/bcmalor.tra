@@ -69,7 +69,7 @@
 @68   = ~Bien, garde tes secrets ! Mais je les découvrirai en temps voulu. Hé hé.~
 @69   = ~Alora, Essaie de ne pas voler dans les magasins que nous visitons. Cela attire l'attention inutilement et nous ne pourrons plus y faire nos emplettes.~
 @70   = ~Ce n'est pas mon genre. Je ne ferais rien qui puisse nous mettre en difficulté avec les marchands locaux.~
-@71   = ~Oh vraiment ? Alors comment cette pomme est-elle arrivée dans ta poche ? Est-ce qu'elle vient de cet étal de fruits où nous sommes passés ?~
+@71   = ~Oh, vraiment ? Alors comment cette pomme est-elle arrivée dans ta poche ? Est-ce qu'elle vient de cet étal de fruits où nous sommes passés ?~
 @72   = ~Eh bien, Jaheira, il se trouve que j'ai trouvé cette pomme sur le sol près de cet étal de fruits. Ce n'est pas comme si elle était sur l'étal, et qui nous dit que cette pomme appartenait au vendeur de fruits ? Elle pourrait provenir d'un pommier.~
 @73   = ~Alora, il n'y avait pas de pommiers à proximité d'où cette pomme aurait pu tomber. Elle doit donc provenir de cet étal.~
 @74   = ~Eh bien, personne ne voudrait d'une pomme qui soit tombée par terre et qui ait été abîmée. Personne ne voudraient la payer, alors pourquoi la laisser se perdre ? J'ai saisi l'opportunité et l'ai ramassée avant que quelqu'un d'autre ne le fasse. Donc, en théorie, ce n'était pas du vol.~
@@ -139,7 +139,7 @@
 @138  = ~Tu es tellement coincé, je pense que tu as besoin d'aide pour te détendre !~
 @139  = ~Alora, comme je l'ai déjà dit, je ne suis pas coincé ou ennuyeux. Laisse-moi te le prouver. (Anomen se rend à l'étal le plus proche, achète une tarte et la jette au visage d'Alora.)~
 @140  = ~Ha ha !~
-@141  = ~(Alora essuie la tarte sur son visage.) Oh très amusant, Anomen !~
+@141  = ~(Alora essuie la tarte sur son visage.) Oh, très amusant, Anomen !~
 @142  = ~Alors, est-ce que je suis coincé maintenant ? Ha ha !~
 @143  = ~(Alora se rend au stand de tartes le plus proche, en achète une et la lance, touchant Keldorn et ratant sa cible, Anomen.) Oups ! Je ne voulais pas te toucher Keldorn. Vraiment !~
 @144  = ~Mais bien sûr ! Qu'est-ce qui te fait rire, Anomen ?~
@@ -256,7 +256,7 @@
 @255  = ~Mais si, Alora. Même si tu penses que je ne te vois pas le faire, je peux te voir du coin de l'œil. Tu as affaire à une drow, après tout, formée à toutes les formes de sournoiseries possibles.~
 @256  = ~D'accord, très bien ! Oui, je te regardais. Je t'ai observée pour voir si un sourire apparaîtrait sur ton visage. Rien de plus.~
 @257  = ~En es-tu bien sûre ? Je détesterais penser que tu essaies de me voler ou de me poignarder dans le dos. Ce serait une terrible erreur de ta part.~
-@258  = ~Oh hum, bien sûr que non. Ouais.~
+@258  = ~Oh, hum, bien sûr que non. Ouais.~
 @259  = ~Parfait. (Viconia commence à se retourner pour s'éloigner d'Alora.)~
 @260  = ~Mmmh, Viconia ?~
 @261  = ~Oui, inconsciente ? Qu'y a-t-il maintenant ?~
@@ -329,4 +329,4 @@
 @328  = ~Valgy ? Évidemment. Il y a-t-il un seul moment où tu es sérieuse ? Nous sommes engagés dans une quête importante et tout ce que tu fais, c'est plaisanter et faire des blagues.~
 @329  = ~Tout à fait mon cher Valgy ! Comme en ce moment par exemple. Je prends très au sérieux ton caractère grognon et je ferai tout mon possible pour que tu retrouves le sourire et que tu t'amuses ! Ouais, ouais !~
 @330  = ~Je pense que tu as grand besoin d'un bon repos dans une belle chambre douillette, Alora.~
-@331  = ~Ah tu vois ? Tu vois que tu peux plaisanter quand tu veux ! Tu viens juste de plaisanter en prétendant que je suis folle ! Ha ! Tout ce que tu dois faire, c'est de sourire la prochaine fois !~
+@331  = ~Ah, tu vois ? Tu vois que tu peux plaisanter quand tu veux ! Tu viens juste de plaisanter en prétendant que je suis folle ! Ha ! Tout ce que tu dois faire, c'est de sourire la prochaine fois !~

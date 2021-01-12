@@ -1,4 +1,4 @@
-@0    = ~Faites venir Alora, la voleuse insoucieuse et téméraire.~ 
+@0    = ~Faites venir Alora, la voleuse désinvolte et téméraire.~ 
 @1    = ~Hé, <CHARNAME> ! Waouh ! Quel est cet endroit ? Que se passe-t-il ?~
 @2    = ~C'est bon de te revoir, Alora. Bienvenue chez moi, loin de mon foyer.~
 @3    = ~C'est un plaisir de te revoir, <CHARNAME> ! C'est chouette ici !~
@@ -23,7 +23,7 @@
 @22   = ~Ouais, te revoilà ! Je peux à nouveau me joindre à vous ?~
 @23   = ~D'accord, allons-y.~
 @24   = ~Pas maintenant, reste ici en m'attendant.~
-@25   = ~Oh un bébé ! C'est formidable, <CHARNAME> ! Oh ! Il est si petit et si mignon !~
+@25   = ~Oh, un bébé ! C'est formidable, <CHARNAME> ! Oh ! Il est si petit et si mignon !~
 @26   = ~Waouh ! Ce serait donc Saradush ? Dommage qu'elle soit assiégée, j'aurais vraiment aimé la voir pendant qu'elle était animée par des foules de badauds.~
 @27   = ~Pourquoi donc ? Veux-tu tester tes compétences de voleuse dans une nouvelle ville ?~
 @28   = ~Ça pourrait être intéressant, mais je m'en fiche complètement.~
