@@ -1,6 +1,6 @@
 @0    = ~Alora ? Que fais-tu ici ? Es-tu venue pour voler un peu plus de ma marchandise ?~
 @1    = ~Hé, Ribald ! Je ne t'ai rien volé. Pourquoi m'accuses-tu de vol ?~
-@2    = ~Je trouve juste curieux que toute la semaine où tu étais ici, tous les jours sans rien acheter, j'ai perdu certains de mes biens. Étrange n'est-ce pas ?~
+@2    = ~Je trouve juste curieux que toute la semaine où tu étais ici, tous les jours sans rien acheter, j'ai perdu certains de mes biens. Étrange, n'est-ce pas ?~
 @3    = ~C'est étrange certes, mais qu'est-ce que cela a à voir avec moi ?~
 @4    = ~Je connais ta réputation, Alora. Je vais te surveiller de très près.~
 @5    = ~Je suis désolé, petite voleuse, mais je ne vais pas traiter avec toi. Si ton groupe souhaite acheter quelque chose, je traiterai avec l'un d'eux, mais pas avec toi.~
@@ -38,7 +38,7 @@
 @37   = ~C'est une bonne idée, je pense. Volons ce vilain temple maléfique !~
 @38   = ~Oh, ça a l'air amusant, <CHARNAME> ! Voler une prêtresse renfrognée semble être un défi amusant !~
 @39   = ~Je n'en sais rien. Je croyais que les Voleurs de l'Ombre s'étaient déjà servis. Être un assassin, c'est différent. C'est mal.~
-@40   = ~Oh chouette, chouette, <CHARNAME> ! C'est mon domaine ! C'est bien que mes talents ne soient pas gâchés ici.~
+@40   = ~Oh, chouette, chouette, <CHARNAME> ! C'est mon domaine ! C'est bien que mes talents ne soient pas gâchés ici.~
 @41   = ~Collaborer avec les voleurs de l'Ombre ? Ça a l'air amusant, <CHARNAME>.~
 @42   = ~Ça a l'air marrant si tu veux mon avis.~
 @43   = ~Waouh ! Collaborer avec les Voleurs de l'Ombre ! Cela devrait être plein d'aventures et de bénéfices !~

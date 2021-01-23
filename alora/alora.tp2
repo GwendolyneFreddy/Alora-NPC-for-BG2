@@ -1,5 +1,5 @@
 BACKUP ~alora/backup~
-//AUTHOR ~Raven"~
+//AUTHOR ~Raven~
 SUPPORT ~CoM at http://www.baldursgatemods.com/forums/index.php?board=13.0~
 VERSION ~2.0~
 
@@ -35,7 +35,7 @@ ALWAYS
 		// Variable used by FUNCTION GW_FIND_DLG_RESPONSE_STRING to find after which transition Alora will be recalled by Fate Spirit.
 		OUTER_SET fatesp_string = 65010  // 65018 = ~Bring me Anomen, the fighter/cleric.~ - 65010 = ~Bring me Aerie, the elven cleric/mage.~
 
-			
+
 	/* --------------------------------------------------------------------------------------------- *
 	 *    Convert strings to UTF-8 for BGEE/BG2EE                                                    *
 	 *    No exception, everything needs to be converted                                             *
@@ -136,7 +136,7 @@ EXTEND_BOTTOM ~edwi25.bcs~ ~alora/baf/eddy.baf~
 /* ---------- *
  *  Epilogue  *
  * ---------- */
-COPY ~alora/2da/cmalond1.2da~ ~override~ 
+COPY ~alora/2da/cmalond1.2da~ ~override~
 	REPLACE ~99999~ @3
 BUT_ONLY
 
