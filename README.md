@@ -104,4 +104,4 @@ She will have at least 2 banters with all members of the party more on some othe
 
 
 **TODO :** 
->Revamp scripts and dialogs: Replace old-school trigger conditions `!StateCheck("XXX",STATE_SLEEPING)` and `IsValidForPartyDialog` with more accurate CamDawg's `!StateCheck("XXX",CD_STATE_NOTVALID)` and `InParty("XXX")` whenever needed.
+> Revamp scripts and dialogs: Replace old-school trigger conditions `!StateCheck("XXX",STATE_SLEEPING)` and `IsValidForPartyDialog` with more accurate CamDawg's `!StateCheck("XXX",CD_STATE_NOTVALID)` and `InParty("XXX")` whenever needed.
