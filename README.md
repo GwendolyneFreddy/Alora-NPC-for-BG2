@@ -1,5 +1,5 @@
 ![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Alora-NPC-for-BG2?include_prereleases&color=gold)<a name="top" id="top"> </a>
-![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/GwendolyneFreddy/LCC-Readme?color=gold)
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/GwendolyneFreddy/Alora-NPC-for-BG2?color=gold)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Russian&color=limegreen)
 
@@ -22,7 +22,7 @@ Baldur's Gate Trilogy and EET<h3>
 
 ## 
 
-![GitHub contributors](https://img.shields.io/github/contributors/GwendolyneFreddy/LCC-Readme?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/GwendolyneFreddy/LCC-Readme?size=30&padding=5&bots=true)](https://badges.pufler.dev)
+![GitHub contributors](https://img.shields.io/github/contributors/GwendolyneFreddy/Alora-NPC-for-BG2?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/GwendolyneFreddy/Alora-NPC-for-BG2?size=30&padding=5&bots=true)](https://badges.pufler.dev)
 
 [Read the mod's readme](https://gwendolynefreddy.github.io/docs/alora/alora-readme.html)
 
@@ -103,5 +103,5 @@ She will have at least 2 banters with all members of the party more on some othe
 - Updated WeiDU installer to v247.
 
 
-TODO :
-Revamp scripts and dialogs: Replace old-school trigger conditions `!StateCheck("XXX",STATE_SLEEPING)` and `IsValidForPartyDialog` with more accurate CamDawg's `!StateCheck("XXX",CD_STATE_NOTVALID)` and `InParty("XXX")` whenever needed.
+**TODO :** 
+>Revamp scripts and dialogs: Replace old-school trigger conditions `!StateCheck("XXX",STATE_SLEEPING)` and `IsValidForPartyDialog` with more accurate CamDawg's `!StateCheck("XXX",CD_STATE_NOTVALID)` and `InParty("XXX")` whenever needed.
