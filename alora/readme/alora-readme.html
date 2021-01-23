@@ -32,12 +32,12 @@ SPAN { color: #FFFFFF; }
   <center><b><font SIZE="300em">Alora for Baldur's Gate 2</font></b><br>
   <a HREF="http://www.baldursgatemods.com/forums/index.php?board=13.0" TARGET="_blank">&quot;Alora&quot;</a><br>
   <center><img src="aloram.jpg"></center>
-  <b>A MOD for Baldur's Gate II: Shadows of Amn (original and EE), BGT and EET<br><br>
+  <b>A MOD for Baldur's Gate II: ToB (classical and EE games), BGT and EET<br><br>
   Version 2.0<br>
-  (October, 2020)</b>
-  <p>Developed by: <a HREF="http://forums.chosenofmystra.net/index.php?action=profile;u=2">Raven</a></p>
+  (January 23, 2021)</b>
+  <p>Developed by: <a HREF="http://www.baldursgatemods.com/forums/index.php?action=profile;u=3">Raven</a></p>
   <p>Alora Support Forum: <a href="http://www.baldursgatemods.com/forums/index.php?board=13.0">http://www.baldursgatemods.com/forums/index.php?board=13.0</a><br>
-  Alora Homepage: <a HREF="http://mods.chosenofmystra.net/alora/index.html" TARGET="_blank">http://mods.chosenofmystra.net/alora/index.html</a></center><br CLEAR="ALL">
+  Alora Homepage: <a HREF="http://mods.chosenofmystra.net/alora/index.html" TARGET="_blank">DEPRECATED!!!</a></center><br CLEAR="ALL">
   <a NAME="top"></a>
   </p>&nbsp;
 </div>
@@ -165,31 +165,32 @@ SPAN { color: #FFFFFF; }
   <p><a NAME="version"></a><b>IX. VERSION HISTORY</b></p>
 
 	<p>
-		<u>Version 2.0 (October 2020)</u>
+		<u>Version 2.0 (January 23, 2021)</u>
 		<ul>
-		<li>...</li>
-		<li>Renamed "<em>setup-alora.tp2</em>" -> "<em>alora.tp2</em>" and moved it into"<em> alora</em>" top-folder to support AL|EN's "Project Infinity".</li>
+		<li>Added "<em>alora.ini</em>" metadata file to support AL|EN's "Project Infinity".</li>
+		<li>Renamed "<em>setup-alora.tp2</em>" -> "<em>alora.tp2</em>", and moved it into "<em> alora</em>" top-folder to support AL|EN's "Project Infinity".</li>
 		<li>Replaced `AUTHOR` keyword with `SUPPORT`</li>
 		<li>Replaced `AT_INTERACTIVE_EXIT` deprecated command with `README`.</li>
 		<li>Used `HANDLE_CHARSETS` function to convert string entries for EE games.</li>
 		<li>Added component `DESIGNATED` number and "<em>alora_npc_for_bg2</em>"`LABEL`.</li>
 		<li>Gathered Alora mod for original BG2 and BG2:EE in one single package, and added native EET compatibility.</li>
+		<li>Removed useless pdialog.2da and interdia.2da patching for BG2 standalone games.</li>
 		<li>Commented code as much as possible.</li>
 		<li>bcmalor.d: Integrated <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-49#entry561215">Lollorian's class script trigger fixes</a>.</li>
 		<li>ucmg702.baf: Added "<em>Continue()</em>" to the script block that is patched via `EXTEND_TOP`.</li>
-		<li>ARewrote install procedure to use WeiDU's built-in `HANDLE_AUDIO` function.</li>
+		<li>Rewrote installation procedure to use WeiDU's built-in `HANDLE_AUDIO` function.</li>
 		<li>Added Alora and Edwin sound clips for every translated language.</li>
 		<li>Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files..</li>
 		<li>Added foreign languages WeiDU prompts whenever possible.</li>
 		<li>Proofread tra files (jazira).</li>
-		<li>Added French translation (by Tonton-thon).</li>
+		<li>Added French translation (by tonton-thon), proofread by jazira.</li>
 		<li>Re-formated, updated and renamed readme file to "<em>alora-readme.html</em>" and moved it into new <em>readme</em> folder.</li>
-		<li>Removed useless files and backup folder.</li>
+		<li>Removed useless portraits and backup folder.</li>
 		<li>Lower cased files.</li>
 		<li>Updated OggDec to v1.9.7.</li>
 		<li>Added archive libiconv-1.9.2-1-src.7z with iconv licence info.</li>
+		<li>Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).</li>
 		<li>Updated WeiDU installer to v247.</li>
-		<li>...</li>
 		</ul><br>
 
 	<p><u>Version 1.5 (19 February 2012)</u>
