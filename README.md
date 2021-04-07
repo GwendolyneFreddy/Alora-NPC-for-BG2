@@ -98,7 +98,7 @@ She will have at least 2 banters with all members of the party more on some othe
 - ucmg702.baf: Added "`Continue()`" to the script block that is patched via `EXTEND_TOP`.
 - Rewrote installation procedure to use WeiDU's built-in `HANDLE_AUDIO` function.
 - Added Alora and Edwin sound clips for every translated language.
-- Fixed Alora portraits in EE games and removed portraits installation as they already exists in games biff files.
+- Fixed Alora portraits in EE games and removed portraits installation as they already exist in games biff files.
 - Added foreign languages WeiDU prompts whenever possible.
 - Proofread tra files (jazira).
 - Added French translation (by tonton-thon), proofread by jazira.
