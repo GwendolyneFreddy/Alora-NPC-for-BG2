@@ -24,13 +24,23 @@ Baldur's Gate Trilogy and EET<h3>
 
 ![GitHub contributors](https://img.shields.io/github/contributors/GwendolyneFreddy/Alora-NPC-for-BG2?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/GwendolyneFreddy/Alora-NPC-for-BG2?size=30&padding=5&bots=true)](https://badges.pufler.dev)
 
+## 
+
 [Read the mod's readme](https://gwendolynefreddy.github.io/docs/alora/alora-readme.html)
 
 [Download the mod at TeamBG](http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=25)<br>
 
 <hr>
 
-## Overview
+<div align="center">
+<a href="#intro">Overview</a> &#x2B25; <a href="#details">Details</a> &#x2B25; <a href="#versions">Version History</a></br>
+</div>
+
+
+<hr>
+
+
+## <a name="intro" id="intro"></a>Overview
 
 <img style="float: left;" src="alora/readme/aloram.jpg"> This mod brings Alora, the halfling thief, from Baldur's Gate to Baldur's Gate II. She can be found in Ribald's store.
 

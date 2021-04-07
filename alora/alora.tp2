@@ -12,11 +12,12 @@ ALWAYS
 	/* -------------------------------------------------------------------------------- *
 	 *    Determines which game is installed and if the game is an Enhanced Edition.    *
 	 * -------------------------------------------------------------------------------- */
-		OUTER_SET is_ee    = (GAME_IS ~bg2ee eet~) ? 1 : 0 // EE game
-		OUTER_SET is_bgt   = (GAME_IS ~bgt~) ? 1 : 0       // bgt
-		OUTER_SET is_tob   = (GAME_IS ~bgt tob~) ? 1 : 0   // based on vanilla ToB engine
-		OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0     // b2gee
-		OUTER_SET is_eet   = (GAME_IS "eet") ? 1 : 0       // eet
+		OUTER_SET is_bgt     = (GAME_IS ~bgt~) ? 1 : 0                      // bgt
+		OUTER_SET is_tob     = (GAME_IS ~tob ca~ AND (is_bgt = 0)) ? 1 : 0  // based on classical ToB standalone
+		OUTER_SET is_bg2ee   = (GAME_IS "bg2ee") ? 1 : 0                    // b2gee
+		OUTER_SET is_eet     = (GAME_IS "eet") ? 1 : 0                      // eet
+		OUTER_SET is_ee      = (GAME_IS "bgee bg2ee iwdee eet") ? 1 : 0     // based on EE games, except PSTEE
+		OUTER_SET is_classic = (is_ee = 0) ? 1 : 0                          // based classic games
 
 
 	/* --------------------------------------------------------------------------- *

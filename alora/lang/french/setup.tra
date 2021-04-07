@@ -1,5 +1,5 @@
-@0    = ~Alora PNJ Mod de Chosen of Mystra~
-@1    = ~Ce mod ne fonctionne que sur ToB, BGT, BG2:EE ou EET.~
+@0    = ~Alora PNJ de Chosen of Mystra~
+@1    = ~Ce mod n'est disponible que pour ToB, BGT, BG2:EE ou EET.~
 
 // Bio
 @2    = ~Interrogée sur son passé, ALORA dit venir d'Iriaèbor. Enfant, elle était jolie, confiante, et curieuse au point que ses parents s'en arrachaient les cheveux. Ils ont eu beau vouloir la calmer, la convaincre de se contenter de rester chez elle au coin d'un bon feu comme toute petite-personne qui se respecte. Alora n'a fait que trouver sa vie de plus en plus étouffante, si bien qu'elle a fini par partir pour explorer le vaste monde. Elle a vite eu toutes sortes d'ennuis, à force d'aller au mauvais endroit et de s'attirer les foudres des mauvaises personnes. Elle a débarqué à la Porte de Baldur, et c'est là qu'elle a découvert sa vocation : le vol. S'enrichir n'est pas sa motivation majeure ; non, simplement, il y a trop de choses intéressantes derrière les portes fermées à clé. Son air modeste l'aide à mener son monde en bateau et son bon caractère lui a souvent évité la prison.
@@ -10,8 +10,9 @@ Alora avait rejoint votre groupe pendant un certain temps après que vous l'ayez 
 @3    = ~Une fois les grandes aventures terminées, Alora a parcouru pendant un certain temps la Côte des Épées, à la recherche du sens de sa vie. Elle décida de retourner à Iriaèbor et d'essayer de se racheter auprès de sa famille. Elle a été accueillie à bras ouverts et est restée dans la ferme de ses parents. Mais au bout d'un certain temps, le virus du voyage l'a rattrapée. Elle a quitté sa famille une fois de plus et s'est rendue en Calimshan. On n'a plus entendu parler d'elle depuis lors, mais la rumeur veut qu'elle y dirige peut-être l'une des principales guildes de voleurs.~
 
 
-// WeiDU prompts
-// -------------
+/* =============== *
+ *  WeiDU prompts  *
+ * =============== */
 @-1000= "Le mod %TP2_FILE_NAME% contient"
 @-1001= "composants optionnels distincts.
 Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
