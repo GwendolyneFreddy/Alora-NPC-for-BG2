@@ -16,8 +16,6 @@ Baldur's Gate Trilogy and EET<h3>
 
 ## 
 
-:warning: Readme writing in progress... Don't try to download and install this mod as it is a WIP version and its install will fail, because of missing files still in development or in beta testing
-
 **Note:** This mod is officially released at <a href="http://www.baldursgatemods.com/forums/index.php">TeamBG.com</a>. I updated it and gathered classical and EE versions in one single package with Solaufein approval.<br>
 
 ## 
