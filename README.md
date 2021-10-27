@@ -1,11 +1,12 @@
 ![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Alora-NPC-for-BG2?include_prereleases&color=gold)<a name="top" id="top"> </a>
 ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/GwendolyneFreddy/Alora-NPC-for-BG2?color=gold)
-![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
+![Platform](https://img.shields.io/static/v1?label=platforms&message=windows%20%7C%20macOS%20%7C%20linux%20%7C%20Project%20Infinity&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Russian&color=limegreen)
 
-<div align="center"><h1>Alora NPC for BGII (WIP)</h1>
+![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BGII:ToB%20%7C%20BGT%20%7C%20BG2%3AEE%20%7C%20EET&color=dodgerblue)
+<div align="center"><h1>Alora NPC for BGII</h1>
 
-<h3>A TeamBG mod Baldur's Gate II: ToB (classical and EE games),<br>
+<h3>A TeamBG mod Baldur's Gate II: ToB (original and EE games),<br>
 Baldur's Gate Trilogy and EET<h3>
 
 </div><br>
@@ -83,6 +84,11 @@ She will have at least 2 banters with all members of the party more on some othe
 
 ## <a name="versions" id="versions"></a>Version History
 
+#### Incoming next Version &nbsp;(..., 20..)
+
+- Included global `LABELS` to support AL|EN's "Project Infinity".
+
+
 #### Version 2.0 &nbsp;(January 23, 2021)
 
 - Added *alora.ini* metadata file to support AL|EN's "Project Infinity".
@@ -106,7 +112,7 @@ She will have at least 2 banters with all members of the party more on some othe
 - Removed useless portraits and backup folder.
 - Lower cased files.
 - Updated OggDec to v1.9.7.
-- Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
+- Added archive libiconv-1.9.2-1-src.7z with iconv license info.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Updated WeiDU installer to v247.
 
