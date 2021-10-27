@@ -27,7 +27,7 @@ Baldur's Gate Trilogy and EET<h3>
 
 [Read the mod's readme](https://gwendolynefreddy.github.io/docs/alora/alora-readme.html)
 
-[Download the mod at TeamBG](http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=25)<br>
+[Download the mod at TeamBG](http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=195)<br>
 
 <hr>
 
