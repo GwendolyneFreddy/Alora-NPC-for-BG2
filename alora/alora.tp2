@@ -78,6 +78,9 @@ LANGUAGE ~Francais (traduction : Tonton-thon)~
          ~french~
          ~alora/lang/french/setup.tra~
 
+LANGUAGE ~Polish (by Aristo)~
+         ~polish~
+         ~alora/lang/polish/setup.tra~
 
 /* ==================== *
  *  Alora NPC for BGII  *
